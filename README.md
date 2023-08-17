@@ -8,4 +8,4 @@ Upon selecting an AOI, Frontend it will pull the relative intersecting tiles fro
 1. Clone the repo
 2. In the root folder, run ```bash start.sh```
 
-The docker containers will spin up. After it is done, go to http://localhost:3000/
+The docker containers will spin up via docker-compose. After it is done, go to http://localhost:3000/
