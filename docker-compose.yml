@@ -1,0 +1,32 @@
+version: "3"
+services:
+  react-frontend:
+    image: react-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - geojson-app
+  node-backend:
+    image: node-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    networks:
+      - geojson-app
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports: 
+      - "27017:27017"
+    networks:
+      - geojson-app
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  geojson-app:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
